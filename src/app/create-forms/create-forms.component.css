@@ -1,0 +1,37 @@
+.container-component{
+  margin: 0;
+}
+
+.container-form-group{
+  border: 1px solid #aba3a3;
+  padding: 15px;
+}
+
+.form-horizontal > .row{
+  margin-top: 15px;
+}
+
+.form-horizontal .control-label{
+  text-align: left;
+}
+
+button, input, select{
+  border-radius: 0;
+}
+
+.multi-input{
+  padding: 0;
+}
+
+.rowAddInput{
+  margin-top: 30px;
+}
+
+.rowAddInput > div{
+  padding: 0;
+}
+
+.rowAddInput button{
+  font-size: 17px;
+  width: 130px;
+}

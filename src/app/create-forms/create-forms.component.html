@@ -1,0 +1,99 @@
+<div class="row container-component">
+  <div class="col-sx-12">
+
+    <div class="form-horizontal">
+      <div
+        class="row"
+        *ngFor="let formItem of forms; let i = index">
+
+        <div class="col-xs-11 col-sm-8 col-sm-offset-{{formItem.levelMarginLeft}} container-form-group" [ngClass]="{'col-xs-offset-1' : formItem.levelMarginLeft}">
+          
+          <div class="form-group" *ngIf="formItem.formWhithCondition">
+            <label class="control-label col-sm-2" >Condition</label>
+            <div class="col-sm-10 multi-input">
+              <div class="col-sm-7">
+                <select 
+                  id="condition" 
+                  class="form-control"
+                  [name]="'condition' + i"
+                  [(ngModel)]="formItem.condition">
+                  <option value="equals">Equals</option>
+                  <option value="greaterThan" *ngIf="formItem.conditionValueType === 'number'">Greater than</option>
+                  <option value="lessThan" *ngIf="formItem.conditionValueType === 'number'">Less than</option>
+                </select>
+              </div>
+              <div class="col-sm-5">
+                <input
+                  *ngIf="formItem.conditionValueType !== 'radio'"
+                  [type]="formItem.conditionValueType"
+                  [name]="'conditionValue' + i"
+                  [(ngModel)]="formItem.conditionValue"
+                  class="form-control">
+                <select
+                  class="form-control" 
+                  *ngIf="formItem.conditionValueType === 'radio'"
+                  [name]="'conditionValue' + i"
+                  [(ngModel)]="formItem.conditionValue">
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" [for]="'question' + i">Question</label>
+            <div class="col-sm-10">
+              <input 
+                type="text" 
+                [name]="'question' + i"
+                [(ngModel)]="formItem.question"
+                class="form-control">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" [for]="'type' + i">Type</label>
+            <div class="col-sm-10">
+              <select 
+                id="type" 
+                class="form-control"
+                [name]="'type' + i"
+                [(ngModel)]="formItem.type"
+                (change)="changeCondition($event.target.value, i)">
+                <option value="text">Text</option>
+                <option value="number">Number</option>
+                <option value="radio">Yes / No</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-xs-12">
+              <div class="pull-right">
+                <button 
+                  type="button" 
+                  class="btn btn-default" 
+                  (click)="onAddSubInput(i, formItem.levelMarginLeft + 1)">
+                  Add Sub-Input
+                </button>
+                <button 
+                  type="button" 
+                  class="btn btn-default" 
+                  (click)="onDelete(i)">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row rowAddInput">
+  <div class="col-xs-12">
+    <button type="button" class="btn btn-default" (click)="onAddInput()">Add Input</button>
+  </div>
+</div>

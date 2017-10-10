@@ -1,0 +1,20 @@
+html{
+  overflow-y: scroll;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#page-main-container{
+  max-width: 680px;
+  margin-bottom: 60px;
+}
+
+.main-content{
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+.hide{
+  display: none;
+  width: 0;
+  height: 0
+}

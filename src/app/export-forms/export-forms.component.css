@@ -1,0 +1,17 @@
+.container-component{
+  margin-top: 30px;
+}
+
+.container-json{
+  border: 1px solid #aba3a3;
+  border-radius: 0;
+}
+
+.rowAddInput > div{
+  padding: 0;
+}
+
+.rowAddInput button{
+  font-size: 17px;
+  width: 130px;
+}

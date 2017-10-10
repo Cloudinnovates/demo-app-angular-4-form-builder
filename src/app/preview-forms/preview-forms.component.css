@@ -1,0 +1,23 @@
+.container-component{
+  margin-top: 15px;
+}
+form .row{
+  margin-top: 15px;
+}
+
+.form-horizontal .control-label{
+  text-align: left;
+}
+
+button, input, select{
+  border-radius: 0;
+}
+
+.radio-inline{
+  margin-left: 10px;
+}
+
+.question{
+  margin-bottom: 5px;
+  font-weight: 700;
+}

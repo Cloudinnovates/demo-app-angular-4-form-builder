@@ -1,0 +1,17 @@
+.btn:focus {
+  outline: none;
+}
+
+h1{
+  margin-bottom: 45px;
+}
+
+button{
+  margin-left: 15px;
+  width: 90px;
+  border-radius: 0;
+}
+
+.menu{
+  border-bottom: 1px solid #aba3a3;
+}

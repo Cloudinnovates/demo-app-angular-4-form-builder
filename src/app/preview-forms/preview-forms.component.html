@@ -1,0 +1,41 @@
+<div class="row container-component">
+  <div class="col-sx-12">
+    <form>      
+      <div 
+        class="row" 
+        *ngFor="let formItem of forms; let i = index"
+        [ngClass]="{'hide' : !formItem.formView}">
+        <div class="col-xs-8 col-xs-offset-{{formItem.levelMarginLeft}} container-form-group" *ngIf="formItem.formView">
+          <div class="form-group" *ngIf="formItem.type !== 'radio'">
+            <label [for]="'questionAnswer' + i">{{formItem.question}}</label>
+            <input 
+              [type]="formItem.type"
+              [name]="'questionAnswer' + i"
+              [(ngModel)]="formItem.questionAnswer" 
+              (ngModelChange)="changedForm(i)"
+              class="form-control">
+          </div>
+          <div class="from-group" *ngIf="formItem.type === 'radio'">
+            <h5 class="question">{{formItem.question}}</h5>
+            <label class="radio-inline">
+              <input
+                type="radio"
+                [name]="'questionAnswerRadio' + i"
+                [(ngModel)]="formItem.questionAnswer"
+                (ngModelChange)="changedForm(i)" 
+                [value]="'yes'">Yes
+            </label>
+            <label class="radio-inline">
+              <input
+                type="radio"
+                [name]="'questionAnswerRadio' + i"
+                [(ngModel)]="formItem.questionAnswer"
+                (ngModelChange)="changedForm(i)" 
+                [value]="'no'">No
+            </label>
+          </div>  
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
